@@ -197,6 +197,11 @@ export default { // Exportation du module
     </ul>
     <h2>Exercice 2</h2>
     <ul>
+
+            <li v-for="lien in liens" :key="lien.url">
+                <a :href="lien.url">{{lien.texte}}</a>
+            </li>
+
         <li><a href="https://google.ch">Google</a></li>
         <li><a href="https://microsoft.ch">https://microsoft.ch</a></li>
         <li><a href="https://apple.ch">La pomme</a></li>
@@ -221,7 +226,18 @@ export default { // Exportation du module
         },
         data() {
             return {
-                msg: 'Hello Vue !',
+                liens: [
+                    { url: "https://google.ch", texte: "Google" },
+                    { url: "https://microsoft.ch", texte: "https://microsoft.ch" },
+                    { url: "https://apple.ch", texte: "La pomme" },
+                    { url: "https://facebook.ch", texte: "Facebook" },
+                    { url: "https://twitter.ch", texte: "Twitter" },
+                    { url: "https://instagram.ch", texte: "Instagram" },
+                    { url: "https://linkedin.ch", texte: "LinkedIn" },
+                    { url: "https://youtube.ch", texte: "YouTube" },
+                    { url: "https://amazon.ch", texte: "Amazon" },
+                    { url: "https://ebay.ch", texte: "eBay" }
+                ]
             }
         }
     }).mount('#monapp')
